@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <div class="bg-sky-600">
+        <div class="flex justify-between items-center container mx-auto py-4 px-6">
+            <h1 class="text-2xl font-bold text-white">
+                Dubes Mart
+            </h1>
+            <ul class="flex text-white space-x-6">
+                <li><a href="#" class="hover:underline">Tambah Produk</a></li>
+                <li><a href="#" class="hover:underline">Hi, Kasir</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-6 gap-4 p-4">
+        
+        <!-- Image Grid -->
+        <div class="md:col-span-4 grid grid-cols-3 gap-3">
+            <!-- Tambahkan data-name dan data-price untuk setiap produk -->
+            <div class="overflow-hidden rounded-lg shadow-md">
+                <img src="Gambar/ramen.jpg" alt="Ramen" class="w-full h-48 object-cover order-image" data-name="Ramen" data-price="50000">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md">
+                <img src="Gambar/takoyaki.jpg" alt="Takoyaki" class="w-full h-48 object-cover order-image" data-name="Takoyaki" data-price="40000">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md">
+                <img src="Gambar/dorakayi.jpg" alt="Dorayaki" class="w-full h-48 object-cover order-image" data-name="Dorayaki" data-price="7500">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md">
+                <img src="Gambar/onigiri.jpg" alt="Onigiri" class="w-full h-48 object-cover order-image" data-name="Onigiri" data-price="15000">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md">
+                <img src="Gambar/soba.jpg" alt="Soba" class="w-full h-48 object-cover order-image" data-name="Soba" data-price="75000">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md">
+                <img src="Gambar/tempura.jpg" alt="Tempura" class="w-full h-48 object-cover order-image" data-name="Tempura" data-price="35000">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md">
+                <img src="Gambar/dango.jpeg" alt="Dango" class="w-full h-48 object-cover order-image" data-name="Dango" data-price="20000">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md">
+                <img src="Gambar/gyudon.jpeg" alt="Gyudon" class="w-full h-48 object-cover order-image" data-name="Gyudon" data-price="27500">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md">
+                <img src="Gambar/mochi.jpeg" alt="Mochi" class="w-full h-48 object-cover order-image" data-name="Mochi" data-price="8000">
+            </div>
+            <!-- Tambahkan produk lainnya dengan data yang sama -->
+        </div>
+
+        <!-- Order Summary -->
+        <div class="md:col-span-2 p-6 rounded-lg shadow-md">
+            <h2 class="text-center font-bold text-2xl mb-2">Dubes Mart</h2>
+            <p class="text-center text-sm text-gray-600">Jl. Jati Raya No. 20, Pulogadung, Jakarta Timur</p>
+            <p class="text-center text-sm text-gray-600 mb-4">021-4560340</p>
+
+            <table class="table-auto w-full text-sm text-gray-700" id="orderTable">
+                <thead>
+                  <tr class="bg-gray-200">
+                    <th class="px-2 py-1 border">No</th>
+                    <th class="px-2 py-1 border">Nama Makanan</th>
+                    <th class="px-2 py-1 border">Qty</th>
+                    <th class="px-2 py-1 border">Harga Satuan</th>
+                    <th class="px-2 py-1 border">Jumlah Harga</th>
+                  </tr>
+                </thead>
+                <tbody id="orderBody">
+                  <!-- Pesanan baru akan ditambahkan di sini -->
+                </tbody>
+            </table>
+
+            <!-- Total Keseluruhan -->
+            <div class="flex justify-between mt-4">
+                <h2 class="text-base">Total</h2>
+                <h2 id="totalPrice" class="text-base">Rp 0</h2>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="md:col-span-2 p-6 rounded-lg ">
+                <h2 class="text-center font-bold text-xl mb-2">Payment Method</h2>
+
+                <!-- Payment Options -->
+                <div class="grid grid-cols-3 gap-2 mb-4">
+                    <button class="border border-gray-300 px-4 py-2 rounded-md text-gray-700 hover:bg-blue-400 focus:bg-blue-400 payment-method-button">TUNAI</button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-md text-gray-700 hover:bg-blue-400 focus:bg-blue-400 payment-method-button">OVO</button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-md text-gray-700 hover:bg-blue-400 focus:bg-blue-400 payment-method-button">GOPAY</button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-md text-gray-700 hover:bg-blue-400 focus:bg-blue-400 payment-method-button">DANA</button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-md text-gray-700 hover:bg-blue-400 focus:bg-blue-400 payment-method-button">BCA</button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-md text-gray-700 hover:bg-blue-400 focus:bg-blue-400 payment-method-button">JAK ONE</button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-md text-gray-700 hover:bg-blue-400 focus:bg-blue-400 payment-method-button">BRI</button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-md text-gray-700 hover:bg-blue-400 focus:bg-blue-400 payment-method-button">MANDIRI</button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-md text-gray-700 hover:bg-blue-400 focus:bg-blue-400 payment-method-button">QRIS</button>
+                </div>
+
+                <button class="bg-indigo-500 text-white px-4 py-2 rounded-md w-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                    Checkout
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal untuk Pemesanan -->
+    <div id="orderModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-80">
+            <h2 id="modalTitle" class="text-xl font-bold mb-4">Pesan Produk</h2>
+            <div class="mb-4">
+                <label class="block text-gray-700">Jumlah:</label>
+                <div class="flex items-center space-x-2">
+                    <button id="decreaseQty" class="px-2 py-1 bg-gray-300 rounded">-</button>
+                    <input type="number" id="quantity" class="w-16 text-center border rounded" value="1" min="1">
+                    <button id="increaseQty" class="px-2 py-1 bg-gray-300 rounded">+</button>
+                </div>
+            </div>
+            <button id="addToOrder" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Tambah ke Pesanan</button>
+            <button id="closeModal" class="w-full mt-2 bg-red-500 text-white py-2 rounded hover:bg-red-600">Batal</button>
+        </div>
+    </div>
+    
+    <!-- Modal Struk -->
+    <div id="receiptModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-80">
+            <h2 class="text-xl font-bold text-center mb-4">Struk Pembelian</h2>
+            <p class="text-sm text-gray-600 text-center">Dubes Mart</p>
+            <p class="text-sm text-gray-600 text-center">Jl. Jati Raya No. 20, Pulogadung, Jakarta Timur</p>
+            <p class="text-sm text-gray-600 text-center mb-4">021-4560340</p>
+
+            <table class="table-auto w-full text-sm text-gray-700 mb-4">
+                <thead>
+                    <tr>
+                        <th class="border px-2 py-1">Nama</th>
+                        <th class="border px-2 py-1">Qty</th>
+                        <th class="border px-2 py-1">Harga Satuan</th>
+                        <th class="border px-2 py-1">Jumlah Harga</th>
+                    </tr>
+                </thead>
+                <tbody id="receiptBody">
+                    <!-- Data pemesanan akan diisi melalui JavaScript -->
+                </tbody>
+            </table>
+
+            <div class="flex justify-between font-bold">
+                <span>Total:</span>
+                <span id="receiptTotal">Rp 0</span>
+            </div>
+
+            <div class="flex justify-between mt-4">
+                <span>Metode Pembayaran:</span>
+                <span id="paymentMethodDisplay">-</span>
+            </div>            
+
+            <div class="flex justify-center justify-between mt-4">
+                <button id="printReceipt" class="bg-blue-500 text-white px-4 py-2 rounded">Cetak</button>
+                <button id="closeReceipt" class="bg-blue-500 text-white px-4 py-2 rounded">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="kasir.js"></script>
+</body>
+</html>
